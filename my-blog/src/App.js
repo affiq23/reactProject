@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+// component is a function, which we have to return something inside of (usually JSX template), and then we export it so we can use it in other files
+import Navbar from './Navbar';
+import Home from './Home';
+import React from 'react';
 
-function App() {
+function App() { // has to start with capital letter
+  const title = "Welcome to the new blog";
+  const likes = 50;
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Change <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"> 
+      <Navbar />
+      <div className="content">
+        <Home />
+      </div>
     </div>
   );
 }
 
-export default App;
+export default App; // export component function so we can use it in other files
